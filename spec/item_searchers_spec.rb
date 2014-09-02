@@ -1,4 +1,5 @@
-require "grocery_list"
+require "spec_helper"
+
 require "./spec/stubs/IGASearcherStub"
 
 describe GroceryList::AbstractSearcher do

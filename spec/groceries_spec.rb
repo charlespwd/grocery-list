@@ -1,8 +1,5 @@
-require 'grocery_list'
+require 'spec_helper'
 require './spec/stubs/IGASearcherStub'
-
-ITEMS_AS_STRING = "bread, philadelphia, bagel all dressed"
-ITEMS_AS_JSON = '["bread", "philadelphia", "bagel all dressed"]'
 
 describe GroceryList do
   it "should accept a list as a string and a searcher" do

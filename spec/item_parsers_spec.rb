@@ -1,13 +1,10 @@
-require 'grocery_list'
-
-ITEMS_AS_STRING = "bread, philadelphia, bagel all dressed"
-ITEMS_AS_JSON = '["bread", "philadelphia", "bagel all dressed"]'
+require 'spec_helper'
 
 describe GroceryList::AbstractItemParser do
   let(:reader) { GroceryList::AbstractItemParser }
 
   it "should have an unimplemented read method" do
-    expect{ reader.read }.to raise_error
+    expect{ reader.read('tostitos') }.to raise_error
   end
 end
 
@@ -25,7 +22,7 @@ describe GroceryList::FileItemParser do
 
   it "should raise an error if no files are found" do
     expect{ reader.read('null') }.to raise_error
-    expect{ reader.read('./spec/lib/searcher_spec.rb') }.to_not raise_error
+    expect{ reader.read('./spec/spec_helper.rb') }.to_not raise_error
   end
 
   it "should only read lines prefixed by a star" do
