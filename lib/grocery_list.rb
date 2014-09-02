@@ -15,7 +15,7 @@ module GroceryList
       :is_a_string?   => ->(s) { StringItemParser.read(s) },
     }
 
-    def search_all(items_source, searcher)
+    def search_all(items_source, searcher = IGASearcher.new)
       validate_input(items_source, searcher)
       @items.each do |item|
         @searcher.search(item)

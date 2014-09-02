@@ -11,12 +11,7 @@ end
 
 # parse input arguments
 input_source = ARGV[0]
-sort_option = ARGV[1] unless ARGV.length < 2
-
-# set options
-searcher = GroceryList::IGASearcher.new
-searcher.search_options = sort_option ? sort_option : :priceAsc
+sort_option = ARGV[1].to_sym unless ARGV.length < 2
 
 # search
-groceries = GroceryList::Groceries.new(input_source, searcher)
-groceries.search_all
+GroceryList.search_all(input_source, GroceryList::IGASearcher.new(sort_option || :priceAsc))
