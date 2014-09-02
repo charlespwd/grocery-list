@@ -25,7 +25,7 @@ module GroceryList
     private
     def validate_input(items_source, searcher)
       raise ArgumentError, "isn't a valid source" unless is_valid_source? items_source
-      raise ArgumentError, "searcher isn't a AbstractSearcher" unless searcher.is_a? AbstractSearcher
+      raise ArgumentError, "searcher isn't a AbstractSearcher" unless searcher.kind_of? AbstractSearcher
       @items = items_from_source(items_source)
       @searcher = searcher
     end
