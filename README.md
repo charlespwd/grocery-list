@@ -6,8 +6,8 @@ then search for.
 ```ruby
 require 'grocery_list'
 
-searcher = GroceryList::IGASearcher.new
-GroceryList.search_all('./grocery-list.md', searcher) #=> opens 1 tab/item
+GroceryList.search_all('spam, eggs, bacon')
+#=> opens 1 tab/item on iga.net sorted by price ascending
 ```
 
 ## Installation
