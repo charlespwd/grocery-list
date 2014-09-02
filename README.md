@@ -4,13 +4,15 @@ then search for.
 
 ## Example usage
 ```ruby
-require 'grocery'
-require 'searcher'
+require 'grocery_list'
 
-searcher = IGASearcher.new
-list = grocery.new('./grocery-list.md', searcher)
+searcher = GroceryList::IGASearcher.new
+GroceryList.search_all('./grocery-list.md', searcher) #=> opens 1 tab/item
+```
 
-list.search_all #=> opens 1 tab per item in your default browser
+## Installation
+```bash
+gem install grocery_list
 ```
 
 ## Formats

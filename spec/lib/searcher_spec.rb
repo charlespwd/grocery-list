@@ -1,9 +1,9 @@
 require "grocery_list"
 require "./spec/stubs/IGASearcherStub"
 
-describe GroceryList::Searcher do
+describe GroceryList::AbstractSearcher do
   it "should have a search method that is not implemented" do
-    searcher = GroceryList::Searcher.new
+    searcher = GroceryList::AbstractSearcher.new
     expect{ searcher.search("") }.to raise_error
   end
 end
