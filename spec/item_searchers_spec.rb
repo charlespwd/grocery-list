@@ -17,11 +17,12 @@ describe GroceryList::IGASearcher do
   end
 
   it "should throw an error if trying to set an invalid option" do
-    searcher = IGASearcherStub.new
+    searcher = GroceryList::IGASearcher.new
     expect { searcher.search_options = :invalid }.to raise_error
     expect { searcher.search_options = :priceAsc }.to_not raise_error
     expect { searcher.search_options = :priceDesc }.to_not raise_error
     expect { searcher.search_options = :DisplayNameAsc }.to_not raise_error
     expect { searcher.search_options = :DisplayNameDesc }.to_not raise_error
+    expect { searcher.search(GroceryList::Item.new('tostitos')) }.to_not raise_error
   end
 end

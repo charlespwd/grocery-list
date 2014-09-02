@@ -1,6 +1,6 @@
 module GroceryList
   class IGASearcher < AbstractSearcher
-    attr_writer :search_options
+    attr :search_options
 
     @@search_url = "http://magasin.iga.net/Search/BasicSearch.aspx?Search="
 
@@ -20,6 +20,9 @@ module GroceryList
       Launchy.open url(item.item_name)
     end
 
+    def search_options
+      @search_options
+    end
     def search_options=(option = :priceAsc)
       raise ArgumentError, "#{option} is an invalid option" unless @@valid_options.include? option
       @search_options = option
@@ -35,7 +38,7 @@ module GroceryList
     end
 
     def encoded_options
-      @search_options ? "&sort=#{@search_options.to_s}" : ""
+      search_options ? "&sort=#{search_options.to_s}" : ""
     end
   end
 end
