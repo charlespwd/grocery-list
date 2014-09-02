@@ -1,4 +1,8 @@
 # Grocery-list
+![Build Status](https://travis-ci.org/charlespwd/grocery-list.svg?branch=master)
+[![Coverage
+Status](https://coveralls.io/repos/charlespwd/grocery-list/badge.png)](https://coveralls.io/r/charlespwd/grocery-list)
+
 Turn your json, csv, md, or strings into grocery lists that you can
 then search for.
 
